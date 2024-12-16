@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+
+<div class="features_area">
+        <div class="container ">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-4">
+                       </div>
+                    <script>
+function validate(event){
+
+        var u=document.getElementById('u').value;
+        var p=document.getElementById('p').value;
+        var p1=document.getElementById('p1').value;
+        var pn=document.getElementById('pn').value;
+
+        var count=0;
+        var np=/^[9876]\d{9}$/;
+
+        if(u==""){
+        document.getElementById('s1').innerHTML="invalid username";
+        count++ ;
+        }
+
+        if(p.length<8){
+        document.getElementById('s2').innerHTML="password should be 8 characters";
+        count++ ;
+        }
+
+        if(p1!=p || p1.length<8){
+        document.getElementById('s3').innerHTML="Incorrect Password";
+        count++;
+        }
+
+        if(!(pn.match(np))){
+        document.getElementById('s4').innerHTML="invalid phone number";
+        }
+
+        if(count!=0){
+        event.preventDefault()
+        }
+        }
+
+
+                    </script></div></div>
+        </div>
+                    </head>
+<body>
+<div class="container w-50 border border-1 border-danger mt-5 p-3">
+    <form method="post" action="result_form_validation.html" onsubmit="validate(event)">
+
+    <div class="row">
+        <div class="col-sm-3"><label>user_name</label></div>
+        <div class="col-sm-5 mb-4"><input type="text" id="u"></div>
+        <div class="col-sm-4"><span id="s1"></span></div>
+
+         <div class="col-sm-3"><label>first_name</label></div>
+        <div class="col-sm-5 mb-4"><input type="text" id="fn"></div>
+        <div class="col-sm-4"><span ></span></div>
+
+         <div class="col-sm-3"><label>last_name</label></div>
+        <div class="col-sm-5 mb-4"><input type="text" id="ln"></div>
+        <div class="col-sm-4"><span ></span></div>
+
+        <div class="col-sm-3"><label>password</label></div>
+        <div class="col-sm-5 mb-4"><input type="password" id="p"></div>
+        <div class="col-sm-4"><span id="s2"></span></div>
+
+        <div class="col-sm-3"><label>conform_password</label></div>
+        <div class="col-sm-5 mb-4"><input type="password" id="p1"></div>
+        <div class="col-sm-4"><span id="s3"></span></div>
+
+        <div class="col-sm-3"><label>phone</label></div>
+        <div class="col-sm-5 mb-4"><input type="number" id="pn"></div>
+        <div class="col-sm-4"><span id="s4"></span></div>
+
+        <div class="col-sm-3">
+        <div class="col-sm-5 mb-4"><input type="submit"></div>
+        <div class="col-sm-3">
+    </div>
+        </div></div></form></div>
+</body>
+</html>
+
+
+
+
+
+
+
+<!--<div class="features_area">-->
+<!--        <div class="container ">-->
+<!--            <div class="row">-->
+<!--                <div class="col-xl-12">-->
+<!--                    <div class="section_title text-center mb-4">-->
+<!--                       </div>-->
+
+<!--<div class="container mt-2">-->
+<!--    <div class="row ">-->
+<!--        <div class="col-md-12 ">-->
+<!--            <div class="col-md-12">-->
+<!--                <h1 class="text-white bg-dark text-center py-1 px-1 mb-4">Join Now</h1>-->
+<!--{% for message in messages %}-->
+<!--                <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">-->
+<!--                    <strong>{{message}}</strong>-->
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>-->
+<!--                </div>-->
+<!--                {% endfor  %}-->
+<!--                <form action="{% url 'shop:signin' %}" method="post" >-->
+<!--                    {% csrf_token %}-->
+
+<!--                    <div class="form-group">-->
+<!--                        <input type="text" class="form-control" name="un" placeholder="Username(Space has Not Allowed)" required>-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+<!--                        <input type="text" class="form-control mt-2" name="fn" placeholder="First Name" required>-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+<!--                        <input type="text" class="form-control mt-2" name="ln" placeholder="Last Name" required>-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+<!--                        <input type="number" class="form-control mt-2" name="p" placeholder="Phone Number" required>-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+<!--                        <input type="email" class="form-control mt-2" name="e" placeholder="Email Address" required>-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+<!--                        <input type="password" class="form-control mt-2" name="p1" placeholder="Password" required>-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+<!--                        <input type="password" class="form-control mt-2" name="p2" placeholder="Confirm Password" required>-->
+<!--                    </div>-->
+<!--<br>-->
+<!--                    <div class="d-grid gap-1">-->
+<!--                    <button class="btn btn-light" type="submit">SignIn</button>-->
+<!--                         </div>-->
+<!--                </form>-->
+<!--                <br><a class="bg-light-shadow d-flex justify-content-center" href="{% url 'courses:login' %}" >Already User?</a>-->
+<!--        </div>-->
+<!--            <div class="col-md-4"></div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div></div></div></div></div>-->
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="features_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-73">
+                        <h3>Login</h3> </div>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="staticEmail" value="email@example.com">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword">
+    </div>
+  </div>
+                  <div class="mb-3 row d-flex justify-content-center">
+    <button  class="col-sm-3 col-form-label boxed-btn3 mb-4">Submit</button>
+                      <br><a class="bg-light-shadow d-flex justify-content-center" href="{% url 'shop:signin' %}" >New User?</a>
+
+
+  </div>
+                </div></div></div></div>
+
+{% endblock %}
