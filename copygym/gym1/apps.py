@@ -1,6 +1,0 @@
-from django.apps import AppConfig
-
-
-class Gym1Config(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'gym1'
